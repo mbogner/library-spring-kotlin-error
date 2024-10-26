@@ -27,6 +27,16 @@ dependencyResolutionManagement {
             val bomVersion: String by System.getProperties()
             version("bom", bomVersion)
             library("bom", "dev.mbo", "spring-boot-bom").versionRef("bom")
+
+            val kotlinLoggingVersion: String by System.getProperties()
+            version("kotlin-logging", kotlinLoggingVersion)
+            library("kotlin-logging", "dev.mbo", "kotlin-logging")
+                .versionRef("kotlin-logging")
+
+            val springKotlinReflectionVersion: String by System.getProperties()
+            version("spring-kotlin-reflection", springKotlinReflectionVersion)
+            library("spring-kotlin-reflection", "dev.mbo", "spring-kotlin-reflection")
+                .versionRef("spring-kotlin-reflection")
         }
     }
 }
