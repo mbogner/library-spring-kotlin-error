@@ -40,7 +40,7 @@ class GlobalErrorCodeValidator(
                 error("Class ${cls.name} is not Enum")
             }
         }
-        log.info("validated all error ids from {}", classes)
+        log.debug("validated all error ids from {}", classes)
     }
 
 }
