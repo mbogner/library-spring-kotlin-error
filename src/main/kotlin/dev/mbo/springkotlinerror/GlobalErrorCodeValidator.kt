@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 
 @Component
-class GlobalErrorCodeValidator(
+open class GlobalErrorCodeValidator(
     @Value("\${app.error-code.base-package}") private val basePackage: String
 ) {
 
