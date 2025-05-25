@@ -4,7 +4,7 @@ import jakarta.servlet.http.HttpServletRequest
 import java.time.Instant
 import java.util.Locale
 
-interface ErrorMapper<T, A> {
+interface ErrorMapper<DTO, ARGS> {
 
     fun mapToErrorDto(
         type: String? = null,
@@ -13,8 +13,8 @@ interface ErrorMapper<T, A> {
         locale: Locale,
         request: HttpServletRequest,
         time: Instant = Instant.now()
-    ): T
+    ): DTO
 
-    fun mapArguments(args: Map<String, Any?>?): List<A>
+    fun mapArguments(args: Map<String, Any?>?): List<ARGS>
 
 }

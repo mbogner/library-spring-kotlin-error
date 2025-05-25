@@ -3,7 +3,7 @@ package dev.mbo.springkotlinerror
 import org.springframework.boot.logging.LogLevel
 import java.time.Instant
 
-class DomainException(
+open class DomainException(
     message: String? = null,
     val type: Class<*>,
     val code: ErrorCode,
