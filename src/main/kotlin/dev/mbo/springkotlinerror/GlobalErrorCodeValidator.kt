@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component
 
 @Component
 open class GlobalErrorCodeValidator(
-    @Value("\${app.error-code.base-package}") private val basePackage: String
+    @Value("\${app.error-code.base-package:dev.mbo.ec}") private val basePackage: String
 ) {
 
     private val log = logger()
