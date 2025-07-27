@@ -5,7 +5,7 @@ import java.time.Instant
 
 open class DomainException(
     message: String? = null,
-    val type: Class<*>,
+    val type: Class<*>? = null,
     val code: ErrorCode,
     val args: Map<String, Any?>? = null,
     cause: Throwable? = null,

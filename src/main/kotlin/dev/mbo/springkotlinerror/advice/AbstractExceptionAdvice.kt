@@ -1,9 +1,9 @@
 package dev.mbo.springkotlinerror.advice
 
-import dev.mbo.springkotlinerror.ErrorCode
-import dev.mbo.springkotlinerror.ErrorMapper
 import dev.mbo.logging.LeveledLogger
 import dev.mbo.logging.logger
+import dev.mbo.springkotlinerror.ErrorCode
+import dev.mbo.springkotlinerror.ErrorMapper
 import jakarta.servlet.http.HttpServletRequest
 import org.springframework.http.ResponseEntity
 import java.time.Instant
@@ -22,10 +22,11 @@ abstract class AbstractExceptionAdvice<T, A>(
         request: HttpServletRequest,
         args: Map<String, Any?>?,
         time: Instant = Instant.now(),
+        type: Class<*>? = null
     ): ResponseEntity<T> {
         LeveledLogger.log(log, code.getDefaultLogLevel(), exc)
         val dto = errorMapper.mapToErrorDto(
-            type = exc.javaClass.name,
+            type = type?.name ?: exc.javaClass.name,
             code = code,
             args = args,
             locale = locale,
